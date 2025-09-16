@@ -1,3 +1,9 @@
-export default function Cadastro(){
+import {View} from 'react-native'
 
+export default function Cadastro(){
+    return(
+        <View>
+
+        </View>
+    )
 }
