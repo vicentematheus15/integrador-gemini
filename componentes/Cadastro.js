@@ -1,3 +1,3 @@
-export default Cadastro(){
-    
+export default function Cadastro(){
+
 }
