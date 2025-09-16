@@ -1,4 +1,4 @@
-import {View} from 'react-native'
+import {View, Text, TextInput, Button, StyleSheet} from 'react-native'
 
 export default function Cadastro(){
     return(
