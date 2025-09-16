@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Cadastro from './componentes/Cadastro';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Olá mundo!</Text>
+
+      <Cadastro></Cadastro>
+      
       <StatusBar style="auto" />
     </View>
   );
