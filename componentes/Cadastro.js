@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native'
-import { useState } from 'react'
 
 export default function Cadastro(){
     const [nomeUsuario, setNomeUsuario] = useState()
