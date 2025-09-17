@@ -16,7 +16,7 @@ export default function Cadastro(){
 //os 3 pontinhos repete o conteúdo que ja tem na array e coloca o obj em sequencia (praticamente um "push")
         const copy = [...listaUsuarios, obj];
 
-        await AsyncStorage.setItem('usuarios', JSON.stringify(copy));
+        await AsyncStorage.setItem('usuarios', JSON.stringify(copy)); //AsyncStorage é o localStorage do react native
 
         setListaUsuarios(copy);
 
