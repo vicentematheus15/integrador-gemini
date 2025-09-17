@@ -1,20 +1,26 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState } from 'react'
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native'
 
 export default function Cadastro(){
     const [nomeUsuario, setNomeUsuario] = useState()
     const [senha, setSenha] = useState()
-    const [listaUsuarios, setListaUsuarios] = useState()
+    const [listaUsuarios, setListaUsuarios] = useState([])
 
-    const cadastrar = () =>{
+    const cadastrar = async () =>{
 // cria uma array de objetos chamada objetos. cada objeto vai conter nomeUsuario e senha
         const obj = {
             nomeUsuario, senha
         }
-//os 3 pontinhos repete o conteúdo que ja tem na array e coloca o obj em sequencia (praticamente um "push")
-        setListaUsuarios([...listaUsuarios, obj])
 
-        alert('Cadastrei')
+//os 3 pontinhos repete o conteúdo que ja tem na array e coloca o obj em sequencia (praticamente um "push")
+        const copy = [...listaUsuarios, obj];
+
+        await AsyncStorage.setItem('usuarios', JSON.stringify(copy));
+
+        setListaUsuarios(copy);
+
+        alert('Cadastrei');
     }
 
     return( // Tudo aqui dentro será mostrado na tela, pois é o que retorna quando eu chamo lá no app.js
