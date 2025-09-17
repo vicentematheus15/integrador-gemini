@@ -3,6 +3,7 @@ import { useState } from 'react'
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native'
 
 export default function Cadastro(){
+//declarando variavel useState: [nomeVariarivel, setNomeVariavel] = useState()   O useState vai sempre mostrar na tela o valor atualizado da variavel
     const [nomeUsuario, setNomeUsuario] = useState()
     const [senha, setSenha] = useState()
     const [listaUsuarios, setListaUsuarios] = useState([])
