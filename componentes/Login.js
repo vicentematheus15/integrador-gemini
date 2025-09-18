@@ -5,6 +5,9 @@ export default function Login() {
     const [nomeUsuario, setNomeUsuario] = useState()
     const [senha, setSenha] = useState()
 
+    const entrar = () => {
+        alert(nomeUsuario)
+    }
 
     return(
         <View>
@@ -21,8 +24,10 @@ export default function Login() {
                 value={senha}
                 onChangeText={setSenha}
                 secureTextEntry
-            
             ></TextInput>
+
+            <Button title='Entrar' color='#28a745' onPress={entrar}
+            ></Button>
 
 
         </View>
