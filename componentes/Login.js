@@ -12,15 +12,17 @@ export default function Login() {
 
         let isValid = false;
         for (const index in listaUsuarios){
-            if(listaUsuarios[index].nomeUsuario === nomeUsuario){
+            if(listaUsuarios[index].nomeUsuario === nomeUsuario &&
+                listaUsuarios[index].senha === senha
+            ){
                 isValid = true
                 break
             }
         }
         if (isValid) {
-            alert(nomeUsuario + 'Pode entrar')
+            alert(nomeUsuario + ' Pode entrar')
         }else{
-            alert(nomeUsuario + 'Não pode entrar')
+            alert(nomeUsuario + ' Não pode entrar')
         }
 
     }
