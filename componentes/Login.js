@@ -12,7 +12,7 @@ export default function Login() {
         const listaUsuarios = data ? JSON.parse(data) : [];
 //cria o isvalid para verificar se o usuario é válido e determina ele como false de inicio
         let isValid = false;
-//faz um for in verificando cada index da array lista de usuarios. Se algum par de chave, nome e senha da arayn bater com o que foi digitado na tentativa de login, troca valor de isValid pra true
+//faz um for in verificando cada index da array lista de usuarios. Se algum par de chave, nome e senha da arayn bater com o que foi digitado na tentativa de login, troca valor de isValid pra true e da um break na verificação dos indices da array, saindo do for e seguindo o codigo
         for (const index in listaUsuarios){
             if(listaUsuarios[index].nomeUsuario === nomeUsuario &&
                 listaUsuarios[index].senha === senha
