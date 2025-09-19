@@ -7,6 +7,7 @@ export default function Login() {
     const [senha, setSenha] = useState()
 
     const entrar = async () => {
+//verifica no localstorage os usuarios cadastrados e se existir,pega o que tiver la, da um parse e coloca na variavel data, depois na lista de usuarios. Se não tiver nada, recebe uma array vazia
         const data = await AsyncStorage.getItem('usuarios');
         const listaUsuarios = data ? JSON.parse(data) : [];
 
