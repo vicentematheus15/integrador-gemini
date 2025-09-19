@@ -7,7 +7,7 @@ const [resposta, setResposta] = useState();
 
 const enviarPrompt = async () => {
     const apiKey = 'AIzaSyAfSv6vU1KhdLkot5MT0mLw5j4Hzs6L5os';
-    const ulr = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
     const resposta = await fetch(url, {
         method: 'POST',
