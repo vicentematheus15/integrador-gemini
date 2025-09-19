@@ -10,8 +10,9 @@ export default function Login() {
 //verifica no localstorage os usuarios cadastrados e se existir,pega o que tiver la, da um parse e coloca na variavel data, depois na lista de usuarios. Se não tiver nada, recebe uma array vazia
         const data = await AsyncStorage.getItem('usuarios');
         const listaUsuarios = data ? JSON.parse(data) : [];
-
+//cria o isvalid para verificar se o usuario é válido e determina ele como false de inicio
         let isValid = false;
+//faz um for in verificando cada index da array lista de usuarios. Se algum par de chave, nome e senha da arayn bater com o que foi digitado na tentativa de login, troca valor de isValid pra true
         for (const index in listaUsuarios){
             if(listaUsuarios[index].nomeUsuario === nomeUsuario &&
                 listaUsuarios[index].senha === senha
