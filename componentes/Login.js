@@ -21,6 +21,7 @@ export default function Login() {
                 break
             }
         }
+//se o isvalid for true, mostra que pode entrar, senao for, mostra que nao pode entrar
         if (isValid) {
             alert(nomeUsuario + ' Pode entrar')
         }else{
