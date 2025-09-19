@@ -1,12 +1,28 @@
 import {View, Text, Button, TextInput, StyleSheet} from 'react-native'
 import { useState } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Login() {
     const [nomeUsuario, setNomeUsuario] = useState()
     const [senha, setSenha] = useState()
 
-    const entrar = () => {
-        alert(nomeUsuario)
+    const entrar = async () => {
+        const data = await AsyncStorage.getItem('usuarios');
+        const listaUsuarios = data ? JSON.parse(data) : [];
+
+        let isValid = false;
+        for (const index in listaUsuarios){
+            if(listaUsuarios[index].nomeUsuario === nomeUsuario){
+                isValid = true
+                break
+            }
+        }
+        if (isValid) {
+            alert(nomeUsuario + 'Pode entrar')
+        }else{
+            alert(nomeUsuario + 'Não pode entrar')
+        }
+
     }
 
     return(
